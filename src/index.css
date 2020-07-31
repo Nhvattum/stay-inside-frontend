@@ -35,10 +35,13 @@
   justify-items: center;
   justify-content: center;
   justify-self: center;
-} */
+  margin: 0 auto;
+}
 
-/* .content {
-  text-align: center;
+.content {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
   text-align: center;
   justify-items: center;
   justify-content: center;
@@ -50,10 +53,14 @@ li {
 }
 
 .about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
   text-align: center;
-  margin-bottom: 50px;
   margin: 0 auto;
+
+
 }
 
 .aboutPage {
