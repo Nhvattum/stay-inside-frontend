@@ -19,7 +19,7 @@ console.log(props.id)
   let commentSubmit = e => {
     window.location.reload(); 
     e.preventDefault()
-      axios.post(`${REACT_APP_API}/comments`, commentInputs)
+      axios.post(`${process.env.REACT_APP_API}/comments`, commentInputs)
       .then(response => {
           console.log(response)
           setCreatedComment(true)
