@@ -26,7 +26,7 @@ const CreateEvent = (props) => {
             .then(response => {
                 if (response.status === 200) {
                     setUpdateEventCreated(true)
-                    window.location.reload(true)
+                    // window.location.reload(true)
                     // console.log(eventCreated)
                     // console.log(eventInputs)
                     {console.log("⏰" )}
