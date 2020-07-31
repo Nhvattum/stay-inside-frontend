@@ -17,7 +17,7 @@ export default function NewComment(props) {
 console.log(props.id)
 
   let commentSubmit = e => {
-    window.location.reload(true); 
+    window.location.reload(false); 
     e.preventDefault()
       axios.post(`${process.env.REACT_APP_API}/comments`, commentInputs)
       .then(response => {
