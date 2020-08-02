@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { Button } from 'react-bootstrap'
 
-export default function DeleteComment(props) {
+export default function DeleteEvent(props) {
   const handleDelete = e => {
     // window.location.reload(); 
     e.preventDefault()
