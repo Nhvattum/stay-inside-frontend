@@ -5,13 +5,14 @@ import ShowComment from '../comments/ShowComment'
 import DeleteEvent from '../events/DeleteEvent'
 import { Card } from 'react-bootstrap'
 
-let [commentCreated, setCommentCreated] = useState(false)
 
-export default function ShowEvents(props, commentCreated) {
+export default function ShowEvents(props) {
+  let [commentCreated, setCommentCreated] = useState(false)
   let [events, setEvents] = useState([])
 
   useEffect(()=>{
     axios.get(`${process.env.REACT_APP_API}/events`, events)
+    console.log(commentCreated)
     .then(response => {
         setEvents(response.data)
         console.log(response)
