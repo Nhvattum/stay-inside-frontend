@@ -7,7 +7,7 @@ import { FormControl } from 'react-bootstrap'
 
 
 export default function NewComment(props) {
-  let [commentCreated, setCreatedComment] = useState(false)
+  let [createdComment, setCreatedComment] = useState(false)
   let [commentInputs, setCommentInputs] = useState({
     name: props.user.name,
     content: "",
@@ -23,6 +23,7 @@ console.log(props.id)
       .then(response => {
           console.log(response)
           setCreatedComment(true)
+          props.created = true
       })
       .catch(err => {
         console.log('🔥🔥🔥🔥')
@@ -35,6 +36,8 @@ console.log(props.id)
     setCommentInputs({...commentInputs, [e.target.name]: e.target.value})
   }
 
+
+  
   return (
     <Form onSubmit={commentSubmit}>
       <InputGroup className="mb-3 mt-3">

@@ -7,6 +7,7 @@ import { Card } from 'react-bootstrap'
 
 export default function ShowEvents(props) {
   let [events, setEvents] = useState([])
+  let [commentCreated, setCommentCreated] = useState(false)
 
   useEffect(()=>{
     axios.get(`${process.env.REACT_APP_API}/events`, events)
@@ -19,7 +20,7 @@ export default function ShowEvents(props) {
       console.log(err)
     })
     console.log('call the server for bounties!')
-  }, [])
+  }, [commentCreated])
 
 
   console.log("🎲")   
@@ -45,7 +46,7 @@ export default function ShowEvents(props) {
                <h5>{event.description}</h5> 
               </Card.Text>
               <ShowComment user={props.user} id={event._id} /> 
-              <NewComment user={props.user} id={event._id} />
+              <NewComment user={props.user} id={event._id} created={setCommentCreated} />
             </Card.Body>
           </Card>
         </li>
