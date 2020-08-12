@@ -9,7 +9,7 @@ export default function ShowEvents(props) {
   let [events, setEvents] = useState([])
   let [commentCreated, setCommentCreated] = useState(false)
 
-  useEffect(()=>{
+  useEffect((commentCreated)=>{
     axios.get(`${process.env.REACT_APP_API}/events`, events)
     .then(response => {
         setEvents(response.data)
