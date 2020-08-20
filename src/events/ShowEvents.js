@@ -12,7 +12,6 @@ export default function ShowEvents(props) {
 
   useEffect(()=>{
     axios.get(`${process.env.REACT_APP_API}/events`, events)
-    // console.log(commentCreated)
     .then(response => {
         setEvents(response.data)
         console.log(response)
